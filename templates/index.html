@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="{% static 'files/images/icon.png' %}" type="image/x-icon"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/header.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/metadata.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/works.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/faq.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/support.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}"/>
+    <title>PROJECT METADATA</title>
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <!-- header part -->
+
+        <header>
+
+            <a href="{% url 'first-page' %}"><img src="{% static 'files/images/icon.png' %}" alt="Oh, no.. the file wouldn't open"/></a>
+
+
+            <nav class="links">
+                <a href="{% url 'first-page' %}" class="link">Home</a>
+                <a href="{% url 'about-page' %}" class="link">About Us</a>
+                <a href="{% url 'cont-page' %}" class="link">Contact Us</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'dash-page' %}" class="link">Dashboard</a>
+                {%else%}
+                {%endif%}
+            </nav>
+                
+            <nav class="register">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'log-out' %}" id="out">Log out</a>
+                {%else%}
+                    <a href="{% url 'sign-page' %}" id="sign">Sign Up</a>
+                    <a href="{% url 'log-page' %}" id="log">Log in</a>
+                {% endif %}
+
+            </nav>
+                
+        </header>
+
+        <!-- the main body -->
+
+        <main>
+
+            <div class="one land">
+                <div class="text">
+                    <h1>
+                        <span>Generating</span> Metadata Made Easy
+                    </h1>
+                    <p>
+                        Fetch_Metadata provides you with information of data about other Data. <br>
+                        Register to get full access to every feature Fetch_Metadata has to offer!
+                    </p>
+                </div>
+
+                <img src="{% static 'files/images/image5.png' %}" alt="Oops, couldn't load image file"/>
+            </div>
+
+            <!-- <div class="two land">
+                <div class="text">
+                    <h1>
+                        Accomplish more with Fetch_Metadata
+                    </h1>
+                    <p>
+                        Fetch_Metadata is your remote friendly platform where you can get <br>
+                         all your metadata files easily accessible without stress.
+                    </p>
+                </div>
+                <img src="{% static 'files/images/two.png' %}" alt="Oops, couldn't load image file"/>
+            </div>
+
+            <div class="three land">
+                <div class="text">
+                    <h1>
+                        Why Fetch_Metadata?
+                    </h1>
+                    <p>
+                        Fetch_Metadata ensures that the data are FAIR: <br>
+                        Finable, Accessible, Interoperable and Reusable
+                    </p>
+                </div>
+
+                <img src="{% static 'files/images/three.png' %}" alt="Oops, couldn't load image file"/>
+            </div> -->
+
+        </main>
+
+        <section class="metadata">
+            <h1>
+                What is Metadata?
+            </h1>
+
+            <div class="block">
+                <div class="text">
+                    <p>
+                        Metadata is a set of data that describes and gives information about other data. 
+                        <br> <br>
+                        It summarises basic information about data, making finding & working 
+                        with particular instances of data easier.
+                    </p>
+                </div>
+
+
+                <img src="{% static 'files/images/image7.png' %}" alt="Oops couldn't load Image"/>
+
+            </div>
+        </section>
+
+        <section class="works">
+            <h1>
+                How it works
+            </h1>
+            <div class="block">
+
+                <div class="card">
+                    <span>1</span>
+                    <p>
+                        Upload any File Fetch_Metadata
+                        will read its data for you
+                    </p>
+                </div>
+
+                <div class="card">
+                    <span>2</span>
+                    <p>
+                        View the Metadata of your uploaded file
+                    </p>
+                </div>
+
+                <div class="card">
+                    <span>3</span>
+                    <p>
+                        Export, download,share and save your file Metadata
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="text">
+                <h1>
+                    FAQs
+                </h1>
+                <p>
+                    New to Fetch_metadata? We answered a few questions so you don’t have to worry about that
+                </p>
+            </div>
+
+            <div class="faqs">
+                <div class="question">
+                    <h3>
+                        What is metadata?
+                    </h3>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="answer">
+                    <p>
+                        Metadata is a set of data that describes and gives information about other data.
+                        It summarises basic information about data, making finding & working 
+                        with particular instances of data easier.
+                    </p>
+                </div>
+            </div>
+            <div class="faqs">
+                <div class="question">
+                    <h3>
+                        How can i download my metatdata file into my Pc?
+                    </h3>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="answer">
+                    <p>
+                        You can download the metadata file into your pc by
+                        hitting the download button on your dashboard after you must 
+                        have created an account
+                    </p>
+                </div>
+            </div>
+            <div class="faqs">
+                <div class="question">
+                    <h3>
+                        Can we have multiple users on a subscription plan?
+                    </h3>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="answer">
+                    <p>
+                        No, you cannot have multiple users on a subscription.
+                        Subscriptions are limited to one account only!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="support">
+
+            <h1>
+                Get Support
+            </h1>
+
+            <div class="block">
+                <p>
+                    Our team is readily available for you
+                </p>
+
+                <div class="buttons">
+                    <button type="submit" id="send">Send Mail</button>
+                    <p>or</p>
+
+                    <button type="submit" id="live">Live Chat &nbsp; <img src="{% static 'files/images/messages-2.png' %}" alt=""></button>
+
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- the footer -->
+
+        <footer>
+            <div class="foots">
+                
+                <div class="socials">
+
+                    <p>Connect with us</p>
+                    
+                    <a href=""><i class="fa-brands fa-facebook fa-2x"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter fa-2x"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram fa-2x"></i></a>
+                    
+                </div>
+                
+                <div class="links">
+                    
+                    <p>Quick Link</p>
+                    
+                    <ul>
+                        <li><a href="{% url 'first-page' %}"">Home</a></li>
+                        <li><a href="">How it works</a></li>
+                        <li><a href="{% url 'about-page' %}">About Us</a></li>
+                        <li><a href="{% url 'sign-page' %}">Register</a></li>
+                        <li><a href="{% url 'about-page' %}">Login</a></li>
+                    </ul>
+                    
+                </div>
+                
+                <div class="help">
+                    
+                    <p>Support</p>
+                    
+                    <ul>
+                        <li><a href="">FAQs</a></li>
+                        <li><a href="">Help</a></li>
+                        <li><a href="">Blogs</a></li>
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <div class="copy">
+                copyright © 2022 Team_Scorpion 2
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script src="{% static 'javascript/index.js' %}"></script>
+
+
+
+</body>
+</html>
